@@ -10,8 +10,19 @@
 
   <body>
   	<div class="container">
-	  	<%= link_to "Sign Up", new_user_registration_path %>
-	  	<%= link_to "Sign In", new_user_session_path %>
+  		<ul>
+		<% if user_signed_in? %>
+			<li>
+				<%= link_to "Logout", destroy_user_session_path %>
+			</li>
+		<% else %>
+			<li>
+		  		<%= link_to "Sign Up", new_user_registration_path %>
+	  		</li>
+	  		<li>
+		  		<%= link_to "Sign In", new_user_session_path %>
+	  		</li>
+	  	<% end %>
 	  	<p class="notice"><%= notice %></p>
 	  	<p class="alert"><%= alert %></p>
 	    <%= yield %>

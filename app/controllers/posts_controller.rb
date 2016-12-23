@@ -8,12 +8,12 @@ class PostsController < ApplicationController
 
 	# New action for creating post
 	def new
-		@post = Post.new
+		@post = current_user.posts.build
 	end
 
 	# Create action saves the post into databases
 	def create
-		@post = Post.new(post_params)
+		@post = current_user.posts.build(post_params)
 		if @post.save
 			flash[:notice] = "Successfully created post!"
 			redirect_to post_path(@post)
@@ -31,7 +31,7 @@ class PostsController < ApplicationController
 	def update
 		if @post.update_attributes(post_params)
 			flash[:notice] = "Successfully updated post!"
-			redirect_to post_path(@posts)
+			redirect_to post_path(@post)
 		else
 			flash[:alert] = "Error updating post!"
 			reder :edit
@@ -44,12 +44,8 @@ class PostsController < ApplicationController
 
 	# The Destroy action removes the post permanently from the db
 	def destroy
-		if @post.destroy
-			flash[:notice] = "successfully deleted post!"
-			redirect to posts_path
-		else
-			flash[:alert] = "Error updating post!"
-		end
+		Post.destroy(params[:id])
+		redirect_to posts_path
 	end
 
 	private

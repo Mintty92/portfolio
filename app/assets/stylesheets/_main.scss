@@ -1,6 +1,6 @@
 .navigate {
 	box-shadow: 2px 0px 15px rgba(0,0,0,0.3);
-	background-color: #BFB09A;
+	background-color: #468966;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -8,6 +8,22 @@
 	border: none;
 }
 
+.navigate a {
+	color: white;
+	text-decoration: none;
+	font-size: .75em;
+	font-weight: bold;
+	padding-top: 10px;
+}
+
+.navigate li {
+	list-style: none;
+}
+
+.navigate ul {
+	padding: 0;
+}
+
 body {
-	background-color: #FFEBCD;
+	background-color: #FFF0D7;
 }

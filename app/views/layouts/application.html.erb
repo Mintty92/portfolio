@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Portfolio</title>
+    <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,7 +10,9 @@
   </head>
 
   <body>
-  	<div class="container">
+  <div class="row">
+    <div class="col-sm-2 col-lg-2">
+      <nav class="navigate navbar navbar-default navbar-fixed-side">
   		<ul>
 		<% if user_signed_in? %>
 			<li>
@@ -23,9 +26,14 @@
 		  		<%= link_to "Sign In", new_user_session_path %>
 	  		</li>
 	  	<% end %>
-	  	<p class="notice"><%= notice %></p>
-	  	<p class="alert"><%= alert %></p>
-	    <%= yield %>
+	  	</ul>
+  	  </nav>
+    </div>
+        <div class="col-sm-10 col-lg-11">
+  	      <p class="notice"><%= notice %></p>
+  	      <p class="alert"><%= alert %></p>
+          <%= yield %>
+	    </div>
     </div>
   </body>
 </html>

@@ -29,14 +29,9 @@
 	  	</ul>
   	  </nav>
     </div>
-        <div class="body-content col-sm-11 col-lg-10">
-        <div class="hero">
-          <div class="title-text">
-            <p>Random ramblings and sources of insipiration</p>
-          </div>
-        </div>
-  	      <p style="margin: 0; padding: 0;" class="notice"><%= notice %></p>
-  	      <p style="margin: 0; padding: 0;" class="alert"><%= alert %></p>
+        <div style="position: relative;" class="body-content col-sm-11 col-lg-10">
+  	      <p style="position: absolute;" class="notice"><%= notice %></p>
+  	      <p style="position: absolute;" class="alert"><%= alert %></p>
           <%= yield %>
 	      </div>
   </body>

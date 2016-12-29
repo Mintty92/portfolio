@@ -1,3 +1,11 @@
+* {
+	box-sizing: border-box;
+}
+
+.no-padding {
+	padding: 0;
+}
+
 .navigate {
 	box-shadow: 2px 0px 15px rgba(0,0,0,0.3);
 	background-color: #468966;
@@ -6,6 +14,8 @@
 	justify-content: center;
 	align-items: center;
 	border: none;
+	margin: 0;
+	z-index: 999;
 }
 
 .navigate a {
@@ -26,4 +36,34 @@
 
 body {
 	background-color: #FFF0D7;
+}
+
+.body-content {
+	padding: 0;
+}
+
+.hero {
+	height: 85vh;
+	background-image: image_url("hero.jpg");
+	background-position: top center;
+	background-attachment: fixed;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+
+}
+
+.title-text {
+	margin-left: -5%;
+	padding: 17px;
+	width: 55%;
+	background-color: rgba(0, 0, 0, .5);
+}
+
+.title-text p {
+	color: white;
+	font-size: 5em;
+	font-family: 'Fruktur', cursive;
 }
